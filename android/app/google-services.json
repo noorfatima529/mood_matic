@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "65578260729",
+    "project_id": "mood-matic",
+    "storage_bucket": "mood-matic.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65578260729:android:7f3290670d59fe4eecaa28",
+        "android_client_info": {
+          "package_name": "com.example.mood_matic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-owE7_bIV4YvJ_vM-AZJcbrFaHCAbMBg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
