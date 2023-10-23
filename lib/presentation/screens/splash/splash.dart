@@ -21,10 +21,12 @@ class _SplashState extends State<Splash> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-          height: 15,
-          width: 15,
-          child: Image.asset('assets/images/mood matic2.png')),
+      body: Center(
+        child: Container(
+            height: 200,
+            width: 200,
+            child: Image.asset('assets/images/mood matic2.png')),
+      ),
     );
   }
 
@@ -34,10 +36,10 @@ class _SplashState extends State<Splash> {
     Future.delayed(const Duration(seconds: 3), () {
       if (isLoggedin == true) {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Home()));
+            context, MaterialPageRoute(builder: (context) => const Home()));
       }
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Login()));
+          context, MaterialPageRoute(builder: (context) => const Login()));
     });
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mood_matic/widgets/textfield.dart';
 
 import '../../../models/usermodel.dart';
 import '../../../services/auth.dart';
+import '../../../widgets/button.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -43,7 +45,7 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: Icon(
+              icon: const Icon(
                 Icons.notification_add,
                 color: Colors.white,
               )),
@@ -124,18 +126,21 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: TextField(
-              decoration: InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: 'Enter your text',
-              ),
+            child: TextInput(
+              hintText: 'Enter your mood',
               controller: text,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 11,
           ),
-          ElevatedButton(onPressed: () {}, child: Text('analyze'))
+          Button(
+            title: "Analyze",
+            onPressed: () async {},
+            backgroundColor: Colors.blue,
+            foregroundColor: Colors.white,
+            isLoading: false,
+          ),
         ],
       ),
     );

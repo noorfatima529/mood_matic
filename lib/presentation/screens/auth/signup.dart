@@ -20,79 +20,81 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-              child: Text(
-            'Moodmatic',
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
-          )),
-          SizedBox(
-            height: 11,
-          ),
-          TextInput(
-            hintText: 'username',
-            controller: username,
-          ),
-          SizedBox(
-            height: 11,
-          ),
-          TextInput(
-            hintText: 'email',
-            controller: email,
-          ),
-          SizedBox(
-            height: 11,
-          ),
-          TextInput(
-            hintText: 'password',
-            controller: password,
-          ),
-          SizedBox(
-            height: 11,
-          ),
-          Button(
-            title: "sign up",
-            onPressed: () async {
-              var res =
-                  await Auth().signup(username.text, email.text, password.text);
-              if (res['success'] == true) {
-                Navigator.push(
-                    context, MaterialPageRoute(builder: (context) => Home()));
-              }
-            },
-            backgroundColor: Colors.blue,
-            foregroundColor: Colors.white,
-            isLoading: false,
-          ),
-          SizedBox(
-            height: 11,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Already have an account",
-                style: TextStyle(
-                  fontSize: 18,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Center(
+                child: Text(
+              'Moodmatic',
+              style: TextStyle(fontSize: 36, fontWeight: FontWeight.w700),
+            )),
+            const SizedBox(
+              height: 11,
+            ),
+            TextInput(
+              hintText: 'username',
+              controller: username,
+            ),
+            const SizedBox(
+              height: 11,
+            ),
+            TextInput(
+              hintText: 'email',
+              controller: email,
+            ),
+            const SizedBox(
+              height: 11,
+            ),
+            TextInput(
+              hintText: 'password',
+              controller: password,
+            ),
+            const SizedBox(
+              height: 11,
+            ),
+            Button(
+              title: "sign up",
+              onPressed: () async {
+                var res = await Auth()
+                    .signup(username.text, email.text, password.text);
+                if (res['success'] == true) {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => Home()));
+                }
+              },
+              backgroundColor: Colors.blue,
+              foregroundColor: Colors.white,
+              isLoading: false,
+            ),
+            const SizedBox(
+              height: 11,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Already have an account",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
                 ),
-              ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Login(),
-                        ));
-                  },
-                  child: Text(
-                    'log in',
-                    style: TextStyle(color: Colors.blue, fontSize: 18),
-                  ))
-            ],
-          )
-        ],
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const Login(),
+                          ));
+                    },
+                    child: const Text(
+                      'log in',
+                      style: TextStyle(color: Colors.blue, fontSize: 18),
+                    ))
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
